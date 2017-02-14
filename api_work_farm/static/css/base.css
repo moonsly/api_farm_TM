@@ -1,0 +1,14 @@
+div.loading {
+	width: 50px;
+	height: 10px;
+	background: url('../img/loading.gif') no-repeat;
+	margin: 0 auto;
+	position: relative; top: 50%;
+}
+
+.error {
+	color: #f44;
+}
+table p.error {
+	display: inline;
+}

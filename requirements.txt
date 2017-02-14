@@ -1,0 +1,7 @@
+Django>=1.5.1
+django-celery
+celery
+django-kombu
+django-registration
+
+virtualenv>=1.10

@@ -1,0 +1,26 @@
+<head>
+    <script src="{{ STATIC_URL }}js/jquery-1.11.1.min.js"></script>
+</head>
+<h3>Hello. This is console for your tasks</h3>
+
+Your API_ID: {{ api_id }} <a href="?generate=new_api_id">Generate new</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="{% url 'auth_logout' %}">Log out</a> <br><br>
+<b>Current API limits: </b><br>
+<table>
+    <tr><td>Max JSON length:</td><td>{{ limits.MAX_JSON }} bytes</td></tr>
+    <tr><td>Max tasks per request:</td><td>{{ limits.MAX_TASKS }}</td></tr>
+    <tr><td>Max messages per task:</td><td>{{ limits.MAX_MESSAGES }}</td></tr>
+    <tr><td>Max message length</td><td>{{ limits.MAX_MSG_LEN }} bytes</td></tr>
+</table>
+<div id="ajax_result"></div>
+<form action="{% url "start-task" %}" method="POST" name="start_task" id="form_start_task">
+    {{ form.as_p }}
+    
+</form>
+<button id="button_send_tasks">Send tasks</button><br/><br/>
+<b>Your current tasks:</b>
+<div id="current_tasks">No tasks</div>
+
+
+
+<!-- JS block //-->
+<script src="{{ STATIC_URL }}js/ajax.js"></script>
